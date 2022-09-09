@@ -845,11 +845,15 @@
           }
         }
 
-        .img {
-          margin-bottom: 20px;
-          border-radius: 50%;
+        .img-wrap {
+          margin: 0 auto 20px;
           width: 100px;
           height: 100px;
+
+          .img {
+            border-radius: 50%;
+            width: 100%;
+          }
         }
 
         .name {

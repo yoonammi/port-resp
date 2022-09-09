@@ -264,14 +264,20 @@
                 </li>
               </ul>
               <div class="team-member">
-                <ol class="team team-design active" data-tab-id="tab01">
+                <ol
+                  class="team team-design active"
+                  data-tab-id="tab01"
+                  data-user-info='{"result":3,"gender":"female"}'
+                >
                   <li class="list">
                     <div>
-                      <img
-                        class="img"
-                        src="https://via.placeholder.com/100"
-                        alt="디자이너"
-                      />
+                      <div class="img-wrap">
+                        <img
+                          class="img"
+                          src="https://via.placeholder.com/100"
+                          alt="디자이너"
+                        />
+                      </div>
                       <div class="name">Pispalan Valtatie</div>
                       <div class="desc">Lead Designer</div>
                       <ul class="icon-wrap">
@@ -291,11 +297,13 @@
                   </li>
                   <li class="list">
                     <div>
-                      <img
-                        class="img"
-                        src="https://via.placeholder.com/100"
-                        alt="디자이너"
-                      />
+                      <div class="img-wrap">
+                        <img
+                          class="img"
+                          src="https://via.placeholder.com/100"
+                          alt="디자이너"
+                        />
+                      </div>
                       <div class="name">Clara Blanchard</div>
                       <div class="desc">Senior Designer</div>
                       <ul class="icon-wrap">
@@ -313,11 +321,13 @@
                   </li>
                   <li class="list">
                     <div>
-                      <img
-                        class="img"
-                        src="https://via.placeholder.com/100"
-                        alt="디자이너"
-                      />
+                      <div class="img-wrap">
+                        <img
+                          class="img"
+                          src="https://via.placeholder.com/100"
+                          alt="디자이너"
+                        />
+                      </div>
                       <div class="name">Aline Urdal</div>
                       <div class="desc">Junior Designer</div>
                       <ul class="icon-wrap">
@@ -336,7 +346,11 @@
                     </div>
                   </li>
                 </ol>
-                <ol class="team team-back" data-tab-id="tab02">
+                <ol
+                  class="team team-back"
+                  data-tab-id="tab02"
+                  data-user-info='{"result":2,"gender":""}'
+                >
                   <li class="list">
                     <div>
                       <img
@@ -386,32 +400,11 @@
                     </div>
                   </li>
                 </ol>
-                <ol class="team team-front" data-tab-id="tab03">
-                  <li class="list">
-                    <div>
-                      <img
-                        class="img"
-                        src="https://via.placeholder.com/100"
-                        alt="프론트엔드 개발자"
-                      />
-                      <div class="name">Pispalan Valtatie</div>
-                      <div class="desc">Front-end Develpoer</div>
-                      <ul class="icon-wrap">
-                        <li class="email">
-                          <a href="mailto:"
-                            ><i class="fa-regular fa-envelope"></i
-                          ></a>
-                        </li>
-                        <li class="tel">
-                          <a href="tel:"><i class="fa-solid fa-phone"></i></a>
-                        </li>
-                        <li class="gender">
-                          <a href=""><i class="fa-solid fa-mars"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ol>
+                <ol
+                  class="team team-front"
+                  data-tab-id="tab03"
+                  data-user-info='{"result":1,"gender":""}'
+                ></ol>
               </div>
             </div>
           </div>
@@ -435,6 +428,11 @@
   </body>
 
   <script>
+    let tt = document
+      .querySelector(".team-design")
+      .getAttribute("data-user-info");
+    let dd = JSON.parse(tt);
+    console.log(dd);
     /* header */
     // 스크롤시 헤더 색상 변경
     document.addEventListener("scroll", function () {
@@ -587,7 +585,7 @@
       $.ajax({
         url: "https://randomuser.me/api",
         //?gender=female
-        dataType: "json",
+        dataType: "jsonp",
         success: function (data) {
           let uImg = data.results[0].picture.large;
           let uName =
@@ -599,54 +597,11 @@
 
           //   let content = '<li class="list">';
           let content = "<div>";
+
+          content += '<div class="img-wrap">';
           content +=
             '<img class="img" src="' + uImg + '" alt="프론트엔드 개발자"/>';
-          content += '<div class="name">' + uName + "</div>";
-          content += '<div class="desc">Lead Designer</div>';
-          content += '<ul class="icon-wrap">';
-          content += '<li class="email">';
-          content +=
-            '<a href="mailto:' +
-            uEmail +
-            '"><i class="fa-regular fa-envelope"></i></a>';
-          content += "</li>";
-          content += '<li class="tel">';
-          content +=
-            '<a href="tel:' +
-            uPhone +
-            '"><i class="fa-solid fa-phone"></i></a>';
-          content += "</li>";
-          content += '<li class="gender">';
-          content += '<a href=""><i class="fa-solid fa-mars"></i></a>';
-          content += "</li>";
-          content += "</ul>";
           content += "</div>";
-          //   content += "</li>";
-
-          elm.innerHTML = content;
-        },
-      });
-    });
-
-    const team02 = document.querySelectorAll(".team-back .list");
-    team02.forEach((elm, index) => {
-      $.ajax({
-        url: "https://randomuser.me/api",
-        //?gender=female
-        dataType: "json",
-        success: function (data) {
-          let uImg = data.results[0].picture.large;
-          let uName =
-            data.results[0].name.first + " " + data.results[0].name.last;
-          let uEmail = data.results[0].email;
-          let uPhone = data.results[0].phone;
-          let uGender = data.results[0].gender;
-          console.log(data.results[0]);
-
-          //   let content = '<li class="list">';
-          let content = "<div>";
-          content +=
-            '<img class="img" src="' + uImg + '" alt="프론트엔드 개발자"/>';
           content += '<div class="name">' + uName + "</div>";
           content += '<div class="desc">Lead Designer</div>';
           content += '<ul class="icon-wrap">';
