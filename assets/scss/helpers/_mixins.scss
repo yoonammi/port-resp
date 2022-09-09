@@ -1,0 +1,18 @@
+// 반응형 미디어쿼리
+@mixin max-w($attr) {
+  @media all and (max-width: #{$attr}px) {
+    @content;
+  }
+}
+
+@mixin min-w($attr) {
+  @media all and (min-width: #{$attr}px) {
+    @content;
+  }
+}
+
+@mixin min-max-w($min, $max) {
+  @media all and (min-width: #{$min}px) and (max-width: #{$max}px) {
+    @content;
+  }
+}
