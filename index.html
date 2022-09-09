@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio - yoo nam mi</title>
+
+    <!-- favicon -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0ae37ffa06.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/reset.min.css" />
+    <link rel="stylesheet" href="assets/css/main.min.css" />
+    <link rel="stylesheet" href="assets/css/grid.min.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <header id="header" data-header-theme="">
+        <div class="container">
+          <div class="header-inner">
+            <h1 class="title">Yoo nam mi</h1>
+            <div class="mobileMenu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+            <nav class="nav pcTablet">
+              <h2 class="blind">PC 메뉴</h2>
+              <ul class="navList">
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Teams</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </nav>
+            <nav class="nav mobile">
+              <h2 class="blind">mobile 메뉴</h2>
+              <div></div>
+              <ul class="navList">
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Teams</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <article class="slider">
+          <div class="main-slider">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <!-- slide01 -->
+                <!-- slider-theme -> style01: white, style02: black) -->
+                <div class="swiper-slide slide01" data-slider-theme="style01">
+                  <div class="container">
+                    <div class="slide-inner">
+                      <div class="slideBg"></div>
+                      <div class="text-wrap">
+                        <p class="title">Lorem Ipsum</p>
+                        <p class="content">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Vitae, maecenas aliquet penatibus nunc et in
+                          quam. Faucibus facilisis libero elit enim leo congue
+                          posuere.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- slide02 -->
+                <div
+                  class="swiper-slide slide02 overlay"
+                  data-slider-theme="style02"
+                >
+                  <div class="slideBg">
+                    <div class="container">
+                      <p class="title">PROGRAMMING</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- slide03 -->
+                <div
+                  class="swiper-slide slide03 overlay"
+                  data-slider-theme="style02"
+                >
+                  <div class="slideBg">
+                    <div class="container">
+                      <p class="title">Portfolio</p>
+                      <p class="content">
+                        HTML5, CSS3, SASS(SCSS), JavaScript를 사용한 개발 연습을
+                        위한 랜딩 페이지입니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slider-pagination container">
+                <div class="pagination"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="container">
+            <h3 class="title">Project</h3>
+            <div class="project-inner">
+              <div class="thumbnail" id="thumbnail">
+                <img
+                  class="img"
+                  src="./assets/images/project/ginipet_thumb@2x.png"
+                  alt="확대 이미지"
+                />
+                <div class="box">
+                  <div class="content">
+                    <h4 class="name">ginipet</h4>
+                    <p class="desc">지니펫 사이트 입니다.</p>
+                  </div>
+                  <a
+                    class="link"
+                    href="https://www.daum.net/"
+                    target="_blank"
+                  ></a>
+                </div>
+              </div>
+              <div class="project-slider">
+                <div class="swiper">
+                  <ul class="swiper-wrapper">
+                    <li
+                      class="swiper-slide"
+                      data-slider-name="지니펫(반응형)"
+                      data-slider-desc="지니펫 반응형 사이트 입니다."
+                      data-slider-link="http://yoo.dothome.co.kr/ginipet/"
+                      data-slider-img="./assets/images/project/ginipet_thumb@2x.png"
+                    >
+                      <img
+                        class="img pcTablet"
+                        src="./assets/images/project/ginipet_small@2x.png"
+                        alt="지니펫 반응형"
+                      />
+                      <img
+                        class="img mobile"
+                        src="./assets/images/project/mobile/mb_ginipet_small.png"
+                        alt="지니펫 반응형"
+                      />
+                    </li>
+                    <li
+                      class="swiper-slide"
+                      data-slider-name="mvl 적응형(PC)"
+                      data-slider-desc="mvl 적응형 PC 사이트 입니다."
+                      data-slider-link="http://yoo.dothome.co.kr/mvl/"
+                      data-slider-img="./assets/images/project/mvl_thumb@2x.png"
+                    >
+                      <img
+                        class="img pcTablet"
+                        src="./assets/images/project/mvl_small@2x.png"
+                        alt="mvl 적응형(PC)"
+                      />
+                      <img
+                        class="img mobile"
+                        src="./assets/images/project/mobile/mb_mvl_small.png"
+                        alt="mvl 적응형(PC)"
+                      />
+                    </li>
+                    <li
+                      class="swiper-slide"
+                      data-slider-name="mvl 적응형(MOBILE)"
+                      data-slider-desc="mvl 적응형 MOBILE 사이트 입니다."
+                      data-slider-link="http://yoo.dothome.co.kr/mvl_mb/"
+                      data-slider-img="./assets/images/project/mvl_thumb_mb@2x.png"
+                    >
+                      <img
+                        class="img pcTablet"
+                        src="./assets/images/project/mvl_small_mb@2x.png"
+                        alt="mvl 적응형(MOBILE)"
+                      />
+                      <img
+                        class="img mobile"
+                        src="./assets/images/project/mobile/mb_mvl_small_mb.png"
+                        alt="mvl 적응형(MOBILE)"
+                      />
+                    </li>
+                    <li
+                      class="swiper-slide"
+                      data-slider-name="파트론 적응형(PC)"
+                      data-slider-desc="파트론 적응형 PC 사이트 입니다."
+                      data-slider-link="http://yoo.dothome.co.kr/partron/"
+                      data-slider-img="./assets/images/project/partron_thumb@2x.png"
+                    >
+                      <img
+                        class="img pcTablet"
+                        src="./assets/images/project/partron_small@2x.png"
+                        alt="partron 적응형(PC)"
+                      />
+                      <img
+                        class="img mobile"
+                        src="./assets/images/project/mobile/mb_partron_small.png"
+                        alt="partron 적응형(PC)"
+                      />
+                    </li>
+                    <li
+                      class="swiper-slide"
+                      data-slider-name="파트론 적응형(MOBILE)"
+                      data-slider-desc="파트론 적응형 MOBILE 사이트 입니다."
+                      data-slider-link="http://yoo.dothome.co.kr/partron_mb/"
+                      data-slider-img="./assets/images/project/partron_thumb_mb@2x.png"
+                    >
+                      <img
+                        class="img pcTablet"
+                        src="./assets/images/project/partron_small_mb@2x.png"
+                        alt="partron 적응형(MOBILE)"
+                      />
+                      <img
+                        class="img mobile"
+                        src="./assets/images/project/mobile/mb_partron_small_mb.png"
+                        alt="partron 적응형(MOBILE)"
+                      />
+                    </li>
+                  </ul>
+                  <div class="pagination"></div>
+                </div>
+                <div class="nextBtn">
+                  <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="teams">
+          <div class="container">
+            <h3 class="title">Team</h3>
+            <div class="team-inner">
+              <ul class="team-tab">
+                <li class="tab active">
+                  <a href="#tab01">Designer</a>
+                </li>
+                <li class="tab">
+                  <a href="#tab02">Back-end Developer</a>
+                </li>
+                <li class="tab">
+                  <a href="#tab03">Front-end Developer</a>
+                </li>
+              </ul>
+              <div class="team-member">
+                <ol class="team team-design active" data-tab-id="tab01">
+                  <li class="list">
+                    <div>
+                      <img
+                        class="img"
+                        src="https://via.placeholder.com/100"
+                        alt="디자이너"
+                      />
+                      <div class="name">Pispalan Valtatie</div>
+                      <div class="desc">Lead Designer</div>
+                      <ul class="icon-wrap">
+                        <li class="email">
+                          <a href="mailto:"
+                            ><i class="fa-regular fa-envelope"></i
+                          ></a>
+                        </li>
+                        <li class="tel">
+                          <a href="tel:"><i class="fa-solid fa-phone"></i></a>
+                        </li>
+                        <li class="gender">
+                          <a href=""><i class="fa-solid fa-venus"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="list">
+                    <div>
+                      <img
+                        class="img"
+                        src="https://via.placeholder.com/100"
+                        alt="디자이너"
+                      />
+                      <div class="name">Clara Blanchard</div>
+                      <div class="desc">Senior Designer</div>
+                      <ul class="icon-wrap">
+                        <li class="email">
+                          <a href=""><i class="fa-regular fa-envelope"></i></a>
+                        </li>
+                        <li class="tel">
+                          <a href="tel:"><i class="fa-solid fa-phone"></i></a>
+                        </li>
+                        <li class="gender">
+                          <a href=""><i class="fa-solid fa-mars"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="list">
+                    <div>
+                      <img
+                        class="img"
+                        src="https://via.placeholder.com/100"
+                        alt="디자이너"
+                      />
+                      <div class="name">Aline Urdal</div>
+                      <div class="desc">Junior Designer</div>
+                      <ul class="icon-wrap">
+                        <li class="email">
+                          <a href="mailto:"
+                            ><i class="fa-regular fa-envelope"></i
+                          ></a>
+                        </li>
+                        <li class="tel">
+                          <a href="tel:"><i class="fa-solid fa-phone"></i></a>
+                        </li>
+                        <li class="gender">
+                          <a href=""><i class="fa-solid fa-venus"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ol>
+                <ol class="team team-back" data-tab-id="tab02">
+                  <li class="list">
+                    <div>
+                      <img
+                        class="img"
+                        src="https://via.placeholder.com/100"
+                        alt="백엔드 개발자"
+                      />
+                      <div class="name">Pispalan Valtatie</div>
+                      <div class="desc">Senior Developer</div>
+                      <ul class="icon-wrap">
+                        <li class="email">
+                          <a href="mailto:"
+                            ><i class="fa-regular fa-envelope"></i
+                          ></a>
+                        </li>
+                        <li class="tel">
+                          <a href="tel:"><i class="fa-solid fa-phone"></i></a>
+                        </li>
+                        <li class="gender">
+                          <a href=""><i class="fa-solid fa-venus"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="list">
+                    <div>
+                      <img
+                        class="img"
+                        src="https://via.placeholder.com/100"
+                        alt="백엔드 개발자"
+                      />
+                      <div class="name">Pispalan Valtatie</div>
+                      <div class="desc">Junior Developer</div>
+                      <ul class="icon-wrap">
+                        <li class="email">
+                          <a href="mailto:"
+                            ><i class="fa-regular fa-envelope"></i
+                          ></a>
+                        </li>
+                        <li class="tel">
+                          <a href="tel:"><i class="fa-solid fa-phone"></i></a>
+                        </li>
+                        <li class="gender">
+                          <a href=""><i class="fa-solid fa-mars"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ol>
+                <ol class="team team-front" data-tab-id="tab03">
+                  <li class="list">
+                    <div>
+                      <img
+                        class="img"
+                        src="https://via.placeholder.com/100"
+                        alt="프론트엔드 개발자"
+                      />
+                      <div class="name">Pispalan Valtatie</div>
+                      <div class="desc">Front-end Develpoer</div>
+                      <ul class="icon-wrap">
+                        <li class="email">
+                          <a href="mailto:"
+                            ><i class="fa-regular fa-envelope"></i
+                          ></a>
+                        </li>
+                        <li class="tel">
+                          <a href="tel:"><i class="fa-solid fa-phone"></i></a>
+                        </li>
+                        <li class="gender">
+                          <a href=""><i class="fa-solid fa-mars"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <p>Contact Us</p>
+          <p>Contact Us</p>
+          <p>Contact Us</p>
+          <p>Contact Us</p>
+          <p>Contact Us</p>
+          <p>Contact Us</p>
+          <p>Contact Us</p>
+          <p>Contact Us</p>
+          <p>Contact Us</p>
+          <p>Contact Us</p>
+        </article>
+      </main>
+      <footer id="footer"></footer>
+    </div>
+  </body>
+
+  <script>
+    /* header */
+    // 스크롤시 헤더 색상 변경
+    document.addEventListener("scroll", function () {
+      const windowTop = window.scrollY;
+      const header = document.getElementById("header");
+      const headerClass = header.getAttribute("class");
+
+      if (windowTop > 10) {
+        header.setAttribute("data-header-theme", "fixed");
+      } else {
+        header.setAttribute("data-header-theme", headerClass);
+      }
+    });
+
+    // 헤더 테마 변경
+    const themeChange = (swiper) => {
+      let activeSlider = swiper.slides[swiper.activeIndex];
+      let sliderTheme = activeSlider.dataset["sliderTheme"];
+      const header = document.getElementById("header");
+      const slider = document.getElementsByClassName("slider")[0];
+
+      // header 테마 변경
+      if (header.getAttribute("data-header-theme") !== "fixed") {
+        header.setAttribute("data-header-theme", sliderTheme);
+      } else {
+        header.setAttribute("data-header-theme", "fixed");
+      }
+      header.removeAttribute("class");
+      header.classList.add(sliderTheme);
+
+      // 페이지네이션 색상 변경을 하기 위해 작성
+      slider.setAttribute("data-slider-theme", sliderTheme);
+    };
+
+    // 모바일 메뉴바 이벤트
+    const moMenuBtn = document.querySelector(".mobileMenu");
+    const moSideMenu = document.querySelector(".nav.mobile");
+    moMenuBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (!this.classList.contains("close")) {
+        this.classList.add("close");
+        moSideMenu.classList.add("active");
+      } else {
+        this.classList.remove("close");
+        moSideMenu.classList.remove("active");
+      }
+    });
+
+    /* slider */
+    const mainSlider = new Swiper(".main-slider .swiper", {
+      loop: true,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      autoplay: {
+        delay: 2000,
+      },
+      speed: 700,
+      pagination: {
+        el: ".slider-pagination .pagination",
+        clickable: true,
+      },
+      on: {
+        init: function (swiper) {
+          themeChange(swiper);
+        },
+        slideChange: function (swiper) {
+          themeChange(swiper);
+        },
+      },
+    });
+
+    /*project*/
+    // 프로젝트 썸네일 변환 이벤트
+    const thumbnailActive = (swiper) => {
+      const activeSliderAttr = swiper.slides[swiper.activeIndex].dataset;
+      let name = activeSliderAttr.sliderName;
+      let desc = activeSliderAttr.sliderDesc;
+      let link = activeSliderAttr.sliderLink;
+      let img = activeSliderAttr.sliderImg;
+
+      const box = document.getElementById("thumbnail");
+      box.getElementsByClassName("name")[0].innerHTML = name;
+      box.getElementsByClassName("desc")[0].innerHTML = desc;
+      box.getElementsByClassName("link")[0].setAttribute("href", link);
+      box.getElementsByClassName("img")[0].setAttribute("src", img);
+    };
+
+    const projectSlider = new Swiper(".project-slider .swiper", {
+      slidesPerView: 2.5,
+      spaceBetween: 15,
+      loop: true,
+      loopedSlides: 6,
+      slideToClickedSlide: true,
+      navigation: {
+        nextEl: ".project-slider .nextBtn",
+      },
+      pagination: {
+        el: ".project-slider .pagination",
+        clickable: true,
+      },
+      on: {
+        slideChange: function (swiper) {
+          thumbnailActive(swiper);
+        },
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 3.5,
+        },
+        831: {
+          slidesPerView: 2.5,
+        },
+      },
+    });
+
+    /*team*/
+    // team 탭 이벤트
+    const tab = document.querySelectorAll(".tab");
+    const team = document.querySelectorAll(".team");
+
+    tab.forEach((elm, index) => {
+      elm.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        let target = e.target.getAttribute("href");
+        target = target.replace("#", "");
+
+        if (!elm.classList.contains("active")) {
+          for (let i = 0; i < tab.length; i++) {
+            tab[i].classList.remove("active");
+          }
+
+          elm.classList.add("active");
+          team.forEach((elm, index) => {
+            elm.classList.remove("active");
+          });
+
+          document
+            .querySelector("[data-tab-id=" + target + "]")
+            .classList.add("active");
+        }
+      });
+    });
+
+    // random user 불러오기
+    const team01 = document.querySelectorAll(".team-design .list");
+    team01.forEach((elm, index) => {
+      $.ajax({
+        url: "https://randomuser.me/api",
+        //?gender=female
+        dataType: "json",
+        success: function (data) {
+          let uImg = data.results[0].picture.large;
+          let uName =
+            data.results[0].name.first + " " + data.results[0].name.last;
+          let uEmail = data.results[0].email;
+          let uPhone = data.results[0].phone;
+          let uGender = data.results[0].gender;
+          console.log(data.results[0]);
+
+          //   let content = '<li class="list">';
+          let content = "<div>";
+          content +=
+            '<img class="img" src="' + uImg + '" alt="프론트엔드 개발자"/>';
+          content += '<div class="name">' + uName + "</div>";
+          content += '<div class="desc">Lead Designer</div>';
+          content += '<ul class="icon-wrap">';
+          content += '<li class="email">';
+          content +=
+            '<a href="mailto:' +
+            uEmail +
+            '"><i class="fa-regular fa-envelope"></i></a>';
+          content += "</li>";
+          content += '<li class="tel">';
+          content +=
+            '<a href="tel:' +
+            uPhone +
+            '"><i class="fa-solid fa-phone"></i></a>';
+          content += "</li>";
+          content += '<li class="gender">';
+          content += '<a href=""><i class="fa-solid fa-mars"></i></a>';
+          content += "</li>";
+          content += "</ul>";
+          content += "</div>";
+          //   content += "</li>";
+
+          elm.innerHTML = content;
+        },
+      });
+    });
+
+    const team02 = document.querySelectorAll(".team-back .list");
+    team02.forEach((elm, index) => {
+      $.ajax({
+        url: "https://randomuser.me/api",
+        //?gender=female
+        dataType: "json",
+        success: function (data) {
+          let uImg = data.results[0].picture.large;
+          let uName =
+            data.results[0].name.first + " " + data.results[0].name.last;
+          let uEmail = data.results[0].email;
+          let uPhone = data.results[0].phone;
+          let uGender = data.results[0].gender;
+          console.log(data.results[0]);
+
+          //   let content = '<li class="list">';
+          let content = "<div>";
+          content +=
+            '<img class="img" src="' + uImg + '" alt="프론트엔드 개발자"/>';
+          content += '<div class="name">' + uName + "</div>";
+          content += '<div class="desc">Lead Designer</div>';
+          content += '<ul class="icon-wrap">';
+          content += '<li class="email">';
+          content +=
+            '<a href="mailto:' +
+            uEmail +
+            '"><i class="fa-regular fa-envelope"></i></a>';
+          content += "</li>";
+          content += '<li class="tel">';
+          content +=
+            '<a href="tel:' +
+            uPhone +
+            '"><i class="fa-solid fa-phone"></i></a>';
+          content += "</li>";
+          content += '<li class="gender">';
+          content += '<a href=""><i class="fa-solid fa-mars"></i></a>';
+          content += "</li>";
+          content += "</ul>";
+          content += "</div>";
+          //   content += "</li>";
+
+          elm.innerHTML = content;
+        },
+      });
+    });
+  </script>
+</html>
