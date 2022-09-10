@@ -574,11 +574,11 @@
       });
     });
 
-    let uInfoString = document
-      .querySelector(".team-design")
-      .getAttribute("data-user-info"); // string
-    let uInfoObject = JSON.parse(uInfoString); // 객체
-    console.log(uInfoObject.gender);
+    let uInfoString =
+      document.querySelectorAll("[data-user-info]")[1].dataset.userInfo; // string
+    // let uInfoObject = JSON.parse(uInfoString); // 객체
+    console.log(uInfoString);
+    // console.log(uInfoObject.gender);
     // console.log(uInfo.result);
     // console.log(uInfo.gender);
 
@@ -588,7 +588,7 @@
       url: "https://randomuser.me/api",
       //?gender=female
       data: {
-        data: "나와라나와라나와라: " + uInfoString.gender,
+        data: "나와라나와라나와라: " + uInfoObject,
       },
       dataType: "json",
       success: function (data) {
@@ -599,8 +599,8 @@
         let uEmail = data.results[0].email;
         let uPhone = data.results[0].phone;
         // let uGender = data.results[0].gender;
-        let uGender = uInfoString.gender;
-        console.log(data);
+        let uGender = uInfoObject.gender;
+        console.log("@@@", uGender);
 
         let content = '<li class="list">';
         content += "<div>";
