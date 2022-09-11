@@ -410,17 +410,43 @@
           </div>
         </article>
 
-        <article>
-          <p>Contact Us</p>
-          <p>Contact Us</p>
-          <p>Contact Us</p>
-          <p>Contact Us</p>
-          <p>Contact Us</p>
-          <p>Contact Us</p>
-          <p>Contact Us</p>
-          <p>Contact Us</p>
-          <p>Contact Us</p>
-          <p>Contact Us</p>
+        <article class="contact">
+          <div class="container">
+            <div class="contact-inner">
+              <div class="bg-wrap">
+                <div class="bg"></div>
+              </div>
+              <div class="form-wrap">
+                <form class="form" action="">
+                  <div class="item">
+                    <label class="name" for="">Company or Your-name</label>
+                    <input
+                      class="value"
+                      type="text"
+                      placeholder="Company or Your-name"
+                    />
+                  </div>
+                  <div class="item">
+                    <label class="name" for="">Email</label>
+                    <input
+                      class="value"
+                      type="email"
+                      placeholder="webmaster@example.com"
+                    />
+                  </div>
+                  <div class="item">
+                    <label class="name" for="">Messages</label>
+                    <input
+                      class="value"
+                      type="password"
+                      placeholder="Please enter your request."
+                    />
+                  </div>
+                  <button class="send" type="submit">Send Request</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </article>
       </main>
       <footer id="footer"></footer>
@@ -547,6 +573,7 @@
 
     /*team*/
     // team 탭 이벤트
+    const tabWrap = document.querySelector(".team-tab");
     const tab = document.querySelectorAll(".tab");
     const team = document.querySelectorAll(".team");
 
@@ -571,69 +598,71 @@
             .querySelector("[data-tab-id=" + target + "]")
             .classList.add("active");
         }
+
+        // 모바일에서 team 탭 스크롤관련 이벤트
+        tabWrap.scrollLeft = elm.offsetLeft - 50;
       });
     });
 
-    let uInfoString =
-      document.querySelectorAll("[data-user-info]")[1].dataset.userInfo; // string
-    // let uInfoObject = JSON.parse(uInfoString); // 객체
-    console.log(uInfoString);
-    // console.log(uInfoObject.gender);
-    // console.log(uInfo.result);
-    // console.log(uInfo.gender);
-
     // random user 불러오기
-    const team01 = document.querySelector(".team-design");
-    $.ajax({
-      url: "https://randomuser.me/api",
-      //?gender=female
-      data: {
-        data: "나와라나와라나와라: " + uInfoObject,
-      },
-      dataType: "json",
-      success: function (data) {
-        console.log(data);
-        let uImg = data.results[0].picture.large;
-        let uName =
-          data.results[0].name.first + " " + data.results[0].name.last;
-        let uEmail = data.results[0].email;
-        let uPhone = data.results[0].phone;
-        // let uGender = data.results[0].gender;
-        let uGender = uInfoObject.gender;
-        console.log("@@@", uGender);
+    team.forEach((elm, index) => {
+      let uInfoString = elm.dataset.userInfo; // string
+      let uInfoObject = JSON.parse(uInfoString); // 객체
+      let result = uInfoObject.result;
+      let genders = uInfoObject.gender;
 
-        let content = '<li class="list">';
-        content += "<div>";
+      $.ajax({
+        url: "https://randomuser.me/api",
+        //?gender=female
+        data: {
+          data: uInfoString,
+        },
+        dataType: "jsonp",
+        success: function (data) {
+          console.log("##", data);
 
-        content += '<div class="img-wrap">';
-        content +=
-          '<img class="img" src="' + uImg + '" alt="프론트엔드 개발자"/>';
-        content += "</div>";
-        content += '<div class="name">' + uName + "</div>";
-        content += '<div class="desc">Lead Designer</div>';
-        content += '<ul class="icon-wrap">';
-        content += '<li class="email">';
-        content +=
-          '<a href="mailto:' +
-          uEmail +
-          '"><i class="fa-regular fa-envelope"></i></a>';
-        content += "</li>";
-        content += '<li class="tel">';
-        content +=
-          '<a href="tel:' + uPhone + '"><i class="fa-solid fa-phone"></i></a>';
-        content += "</li>";
-        content += '<li class="gender">';
-        content += '<a href=""><i class="fa-solid fa-mars"></i></a>';
-        content += "</li>";
-        content += "</ul>";
-        content += "</div>";
-        content += "</li>";
+          let uImg = data.results[0].picture.large;
+          let uName =
+            data.results[0].name.first + " " + data.results[0].name.last;
+          let uEmail = data.results[0].email;
+          let uPhone = data.results[0].phone;
+          let uGender = data.results[0].gender;
+          let Count = 0;
 
-        team01.innerHTML = content;
-      },
-      error: function (e) {
-        console.log("e: ", e);
-      },
+          let content = '<li class="list">';
+          content += "<div>";
+          content += '<div class="img-wrap">';
+          content +=
+            '<img class="img" src="' + uImg + '" alt="프론트엔드 개발자"/>';
+          content += "</div>";
+          content += '<div class="name">' + uName + "</div>";
+          content += '<div class="desc">Lead Designer</div>';
+          content += '<ul class="icon-wrap">';
+          content += '<li class="email">';
+          content +=
+            '<a href="mailto:' +
+            uEmail +
+            '"><i class="fa-regular fa-envelope"></i></a>';
+          content += "</li>";
+          content += '<li class="tel">';
+          content +=
+            '<a href="tel:' +
+            uPhone +
+            '"><i class="fa-solid fa-phone"></i></a>';
+          content += "</li>";
+          content += '<li class="gender">';
+          content += '<a href=""><i class="fa-solid fa-mars"></i></a>';
+          content += "</li>";
+          content += "</ul>";
+          content += "</div>";
+          content += "</li>";
+
+          elm.innerHTML = content;
+        },
+        error: function (e) {
+          console.log("e: ", e);
+        },
+      });
     });
   </script>
 </html>

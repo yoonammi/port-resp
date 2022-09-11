@@ -891,3 +891,137 @@
     }
   }
 }
+@include max-w(767) {
+  .teams {
+    padding: 100px 0;
+
+    .title {
+      margin-bottom: 30px;
+      font-size: 24px;
+      line-height: 35px;
+    }
+
+    .team-inner {
+      display: block;
+
+      .team-tab {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .tab {
+          width: calc(100% / 3);
+          border-bottom: 0;
+
+          a {
+            padding: 20px 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+@include max-w(320) {
+  .teams {
+    .team-inner {
+      .team-tab {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+
+        .tab {
+          width: initial;
+
+          a {
+            // flex: 0 0 auto;
+            padding: 20px;
+            white-space: nowrap;
+            font-size: 12px;
+            line-height: 17px;
+          }
+        }
+      }
+      .team-member {
+        .team {
+          padding: 0 5px;
+          flex-direction: column;
+        }
+
+        .list {
+          padding: 35px 0;
+          max-width: none;
+
+          &:before {
+            width: 100px;
+            height: 1px;
+            top: initial;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*contact*/
+.contact {
+  padding: 100px 0;
+
+  .contact-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bg-wrap {
+    width: 50%;
+
+    .bg {
+      background: url("../images/contact/contact_bg@2x.png") no-repeat;
+      background-size: cover;
+      width: 399px;
+      height: 399px;
+    }
+  }
+
+  .form-wrap {
+    width: 50%;
+
+    .form {
+    }
+
+    .item {
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+        letter-spacing: 2px;
+      }
+
+      .value {
+        padding: 0 20px;
+        width: 100%;
+        max-width: 452px;
+        background: #fff;
+        border: 1px solid #ddd;
+        outline: none;
+        line-height: 2.4;
+
+        &::placeholder {
+          font-size: 13px;
+          font-weight: 300;
+          line-height: px;
+          letter-spacing: 2px;
+          color: #aaa;
+        }
+      }
+    }
+  }
+}
