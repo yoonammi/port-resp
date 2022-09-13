@@ -100,6 +100,12 @@ $inputType: ("text", "search", "tel", "url", "email", "password", "submit");
   }
 }
 
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 button,
 select {
   text-transform: none;

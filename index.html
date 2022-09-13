@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio - yoo nam mi</title>
 
-    <!-- favicon -->
-
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
@@ -46,22 +44,23 @@
             <nav class="nav pcTablet">
               <h2 class="blind">PC 메뉴</h2>
               <ul class="navList">
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Teams</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#sec01">Projects</a></li>
+                <li><a href="#sec02">Teams</a></li>
+                <li><a href="#sec03">Contact Us</a></li>
               </ul>
             </nav>
             <nav class="nav mobile">
               <h2 class="blind">mobile 메뉴</h2>
               <div></div>
               <ul class="navList">
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Teams</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#sec01">Projects</a></li>
+                <li><a href="#sec02">Teams</a></li>
+                <li><a href="#sec03">Contact Us</a></li>
               </ul>
             </nav>
           </div>
         </div>
+        <div class="backBg"></div>
       </header>
 
       <main id="main">
@@ -122,7 +121,7 @@
           </div>
         </article>
 
-        <article class="project">
+        <article class="project" data-sec-index="sec01">
           <div class="container">
             <h3 class="title">Project</h3>
             <div class="project-inner">
@@ -248,7 +247,7 @@
           </div>
         </article>
 
-        <article class="teams">
+        <article class="teams" data-sec-index="sec02">
           <div class="container">
             <h3 class="title">Team</h3>
             <div class="team-inner">
@@ -410,7 +409,7 @@
           </div>
         </article>
 
-        <article class="contact">
+        <article class="contact" data-sec-index="sec03">
           <div class="container">
             <div class="contact-inner">
               <div class="bg-wrap">
@@ -418,50 +417,97 @@
               </div>
               <div class="form-wrap">
                 <form class="form" action="">
-                  <div class="item">
-                    <label class="name" for="">Company or Your-name</label>
-                    <input
-                      class="value"
-                      type="text"
-                      placeholder="Company or Your-name"
-                    />
-                  </div>
-                  <div class="item">
-                    <label class="name" for="">Email</label>
-                    <input
-                      class="value"
-                      type="email"
-                      placeholder="webmaster@example.com"
-                    />
-                  </div>
-                  <div class="item">
-                    <label class="name" for="">Messages</label>
-                    <input
-                      class="value"
-                      type="password"
-                      placeholder="Please enter your request."
-                    />
-                  </div>
-                  <button class="send" type="submit">Send Request</button>
+                  <fieldset>
+                    <legend class="blind">프로젝트 의뢰하기</legend>
+                    <div class="item">
+                      <label class="name" for="formName"
+                        >Company or Your-name</label
+                      >
+                      <input
+                        class="value"
+                        id="formName"
+                        type="text"
+                        placeholder="Company or Your-name"
+                        required
+                      />
+                      <div class="err errName"></div>
+                    </div>
+                    <div class="item">
+                      <label class="name" for="formEmail">Email</label>
+                      <input
+                        class="value"
+                        id="formEmail"
+                        type="email"
+                        placeholder="webmaster@example.com"
+                        required
+                      />
+                      <div class="err errEmail"></div>
+                    </div>
+                    <div class="item">
+                      <label class="name" for="formMsg">Messages</label>
+                      <textarea
+                        class="value"
+                        name=""
+                        id="formMsg"
+                        cols="30"
+                        rows="3"
+                        placeholder="Please enter your request."
+                        required
+                      ></textarea>
+                      <div class="err errMessage"></div>
+                    </div>
+                    <button id="send" class="send" type="submit">
+                      Send Request
+                    </button>
+                  </fieldset>
                 </form>
               </div>
             </div>
           </div>
         </article>
       </main>
-      <footer id="footer"></footer>
+      <footer id="footer">
+        <p class="copyright">ⓒ 2022 <span class="name">Yoo nam mi</span></p>
+        <ul class="copyrightList">
+          <li class="list">
+            <a href="https://swiperjs.com/" target="_blank">Swiper,</a>
+          </li>
+          <li class="list">
+            <a href="https://fonts.google.com/icons" target="_blank"
+              >Material Icons,</a
+            >
+          </li>
+          <li class="list">
+            <a href="https://fontawesome.com/" target="_blank">fontawesome,</a>
+          </li>
+          <li class="list">
+            <a href="https://randomuser.me/" target="_blank"
+              >Random User Generator,</a
+            >
+          </li>
+          <li class="list">
+            <a href="https://unsplash.com/" target="_blank">Unsplash,</a>
+          </li>
+          <li class="list">
+            <a
+              href="https://www.vecteezy.com/free-vector/website"
+              target="_blank"
+              >Website Vectors by Vecteezy</a
+            >
+          </li>
+        </ul>
+      </footer>
     </div>
   </body>
 
   <script>
     /* header */
     // 스크롤시 헤더 색상 변경
+    const header = document.getElementById("header");
     document.addEventListener("scroll", function () {
-      const windowTop = window.scrollY;
-      const header = document.getElementById("header");
       const headerClass = header.getAttribute("class");
 
-      if (windowTop > 10) {
+      if (window.scrollY > 10) {
         header.setAttribute("data-header-theme", "fixed");
       } else {
         header.setAttribute("data-header-theme", headerClass);
@@ -491,15 +537,38 @@
     // 모바일 메뉴바 이벤트
     const moMenuBtn = document.querySelector(".mobileMenu");
     const moSideMenu = document.querySelector(".nav.mobile");
+    const bg = document.querySelector(".backBg");
     moMenuBtn.addEventListener("click", function (e) {
       e.preventDefault();
       if (!this.classList.contains("close")) {
         this.classList.add("close");
         moSideMenu.classList.add("active");
+        bg.classList.add("active");
       } else {
         this.classList.remove("close");
         moSideMenu.classList.remove("active");
+        bg.classList.remove("active");
       }
+    });
+
+    // 메뉴 클릭시 해당 섹션 이동
+    let hMenu = document.querySelectorAll(".navList a");
+    hMenu.forEach((elm, index) => {
+      elm.addEventListener("click", function (e) {
+        e.preventDefault();
+        let target = elm.getAttribute("href");
+        target = target.replace("#", "");
+        let sec = document.querySelector("[data-sec-index='" + target + "']");
+
+        window.scroll({
+          top: sec.offsetTop - header.clientHeight,
+          behavior: "smooth",
+        });
+
+        moMenuBtn.classList.remove("close");
+        moSideMenu.classList.remove("active");
+        bg.classList.remove("active");
+      });
     });
 
     /* slider */
@@ -663,6 +732,70 @@
           console.log("e: ", e);
         },
       });
+    });
+
+    /*contact*/
+    // 유효성 검사
+    const sendBtn = document.getElementById("send");
+
+    const formCheck = () => {
+      const name = document.getElementById("formName");
+      const email = document.getElementById("formEmail");
+      const message = document.getElementById("formMsg");
+      // email 정규식
+      const regExp =
+        /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+      if (name.value === "") {
+        document.querySelector(".errName").innerHTML =
+          "Company or Your-name is required";
+        name.focus();
+
+        return false;
+      } else {
+        document.querySelector(".errName").innerHTML = "";
+      }
+
+      if (email.value === "") {
+        document.querySelector(".errEmail").innerHTML = "Email is required";
+        email.focus();
+
+        return false;
+      } else if (!regExp.test(email.value)) {
+        document.querySelector(".errEmail").innerHTML =
+          "Please check the email";
+        email.focus();
+
+        return false;
+      } else {
+        document.querySelector(".errEmail").innerHTML = "";
+      }
+
+      if (message.value === "") {
+        document.querySelector(".errMessage").innerHTML = "Message is required";
+        message.focus();
+
+        return false;
+      } else {
+        document.querySelector(".errMessage").innerHTML = "";
+      }
+
+      window.open(
+        "mailto:dlclam@naver.com?subject=프로젝트 의뢰&body=Company or Your-name : " +
+          name.value +
+          " %0D%0AEmail : " +
+          email.value +
+          " %0D%0AMessages : " +
+          message.value +
+          ""
+      );
+
+      return true;
+    };
+
+    sendBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      formCheck();
     });
   </script>
 </html>
